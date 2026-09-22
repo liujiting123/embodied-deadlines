@@ -84,14 +84,14 @@ function render() {
   $('#result-count').textContent = state.view === 'list' ? `${rows.length} 个会议轮次 · 按状态与全文截止排序` : '12 个月 · 往届投稿节奏';
   const followed = data.conferences.filter(item => state.backup || item.priority !== 'backup');
   const upcoming = followed.map(item => ({ conference: item, edition: selectEdition(item, 'current', now) }))
-    .filter(row => row.edition && deadlineState(row.edition, now) === 'open')
-    .sort((a, b) => Date.parse(a.edition.paperDeadline) - Date.parse(b.edition.paperDeadline));
+    .filter(row => row.edition && ['open', 'date-only'].includes(deadlineState(row.edition, now)))
+    .sort((a, b) => Date.parse(a.edition.paperDeadline || a.edition.paperDeadlineDate) - Date.parse(b.edition.paperDeadline || b.edition.paperDeadlineDate));
   $('#series-count').textContent = followed.length;
   $('#followed-note').textContent = state.backup ? '含 2 个备选会议' : '核心会议 + RLC';
-  $('#soon-count').textContent = upcoming.filter(row => Date.parse(row.edition.paperDeadline) - now <= 90 * 86400000).length;
+  $('#soon-count').textContent = upcoming.filter(row => Date.parse(row.edition.paperDeadline || row.edition.paperDeadlineDate) - now <= 90 * 86400000).length;
   const next = upcoming[0];
   $('#next-conference').textContent = next ? `${next.conference.series} ${next.edition.year}` : '等待新日期';
-  $('#next-date').textContent = next ? formatDeadline(next.edition.paperDeadline, state.timezone) : '已公布轮次均已截止';
+  $('#next-date').textContent = next ? next.edition.paperDeadline ? formatDeadline(next.edition.paperDeadline, state.timezone) : `${next.edition.paperDeadlineDate} · 时刻待核实` : '已公布轮次均已截止';
   $('#today-label').textContent = new Intl.DateTimeFormat('zh-CN', { timeZone: 'Asia/Shanghai', year: 'numeric', month: 'long', day: 'numeric' }).format(now);
   $('#verified-label').textContent = `日期核对 ${data.updatedAt}`;
   $('#ccf-note').innerHTML = `分级依据${link(data.ccfSource, escape(data.ccfVersion))}；“未收录”不等于 C 类，也不代表学术质量评价。`;
