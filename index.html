@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f6fb">
+  <meta name="description" content="精选具身智能会议的投稿截止日期、实时倒计时与 CCF 分级。机器人、机器学习、计算机视觉，一个清晰的全年投稿日历。">
+  <title>Embodied Deadlines · 具身智能投稿日历</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232e55db'/%3E%3Cpath d='M9 9h14v4H13v3h8v4h-8v3h10v3H9z' fill='white'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#results">跳至会议列表</a>
+  <div class="page-shell">
+    <header class="site-header">
+      <a href="./" class="wordmark" aria-label="Embodied Deadlines 首页"><span class="brand-mark" aria-hidden="true">E</span><span>Embodied <strong>Deadlines</strong></span></a>
+      <a class="repo-link" href="https://github.com/liujiting123/embodied-deadlines" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+    </header>
+    <main>
+      <div class="page-heading">
+        <div><p class="eyebrow">RESEARCH CALENDAR</p><h1>具身智能<span>投稿日历</span></h1><p class="intro">机器人 · 机器学习 · 计算机视觉</p></div>
+        <div class="date-block"><span id="today-label"></span><span id="verified-label">正在载入会议数据</span></div>
+      </div>
+      <section class="overview" aria-label="投稿概览">
+        <div class="overview-item"><span class="overview-label">关注会议</span><strong id="series-count">11</strong><span class="overview-note" id="followed-note">核心会议 + RLC</span></div>
+        <div class="overview-item"><span class="overview-label">未来 90 天截稿</span><strong id="soon-count">—</strong><span class="overview-note" id="soon-note">按全文截止日期</span></div>
+        <div class="overview-item next-overview"><span class="overview-label">最近的全文截止</span><strong id="next-conference">—</strong><span class="overview-note" id="next-date">等待官方日期</span></div>
+      </section>
+      <section class="workbench" aria-label="筛选会议">
+        <div class="toolbar-top">
+          <div class="category-filters" role="group" aria-label="研究方向">
+            <button class="category active" data-category="all" aria-pressed="true">全部方向</button>
+            <button class="category" data-category="RO" aria-pressed="false">机器人 <span>RO</span></button>
+            <button class="category" data-category="ML" aria-pressed="false">机器学习 <span>ML</span></button>
+            <button class="category" data-category="CV" aria-pressed="false">计算机视觉 <span>CV</span></button>
+            <button class="category" data-category="AI" aria-pressed="false" hidden>综合 AI</button>
+          </div>
+          <label class="backup-switch"><input type="checkbox" id="show-backup"><span class="switch-track" aria-hidden="true"></span>含 AAAI / IJCAI</label>
+        </div>
+        <div class="toolbar-bottom">
+          <label class="search-field"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="查找会议，如 CoRL" aria-label="查找会议"></label>
+          <div class="select-group">
+            <label><span class="sr-only">会议年份</span><select id="year"><option value="current">当前投稿轮次</option></select></label>
+            <label><span class="sr-only">投稿状态</span><select id="status"><option value="all">全部状态</option><option value="open">尚未截止</option><option value="pending">日期待公布</option><option value="closed">已截止</option></select></label>
+            <label><span class="sr-only">显示时区</span><select id="timezone"><option value="Asia/Shanghai">北京时间 UTC+8</option><option value="UTC">协调世界时 UTC</option><option value="original">官方原始时区</option></select></label>
+          </div>
+        </div>
+      </section>
+      <div class="results-toolbar"><p id="result-count" role="status" aria-live="polite">正在载入…</p><div class="view-switch" role="group" aria-label="查看方式"><button data-view="list" class="active" aria-pressed="true">截止列表</button><button data-view="rhythm" aria-pressed="false">全年节奏</button></div></div>
+      <section id="results" tabindex="-1" aria-label="会议截止日期"><p class="loading">正在读取会议日期…</p></section>
+      <section id="rhythm" hidden aria-label="全年投稿节奏"></section>
+      <aside class="data-note"><span class="note-symbol" aria-hidden="true">i</span><div><p>倒计时按全文截止时间计算；摘要或注册截止可能更早。日期待公布时，仅展示往届节奏。</p><p id="ccf-note">CCF 分级以官方推荐目录为准；未收录不等于 C 类。</p></div></aside>
+    </main>
+    <footer><span>Embodied Deadlines</span><div><a href="https://mlciv.com/ai-deadlines/?sub=CV,RO" target="_blank" rel="noopener noreferrer">灵感来源</a><a href="https://github.com/liujiting123/embodied-deadlines/blob/main/data/conferences.json" target="_blank" rel="noopener noreferrer">查看 / 更新数据 <span aria-hidden="true">↗</span></a></div></footer>
+  </div>
+  <noscript><p class="noscript">请启用 JavaScript 查看倒计时。也可以在 GitHub 仓库中查看完整会议数据。</p></noscript>
+</body>
+</html>

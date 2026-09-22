@@ -1,0 +1,511 @@
+{
+  "updatedAt": "2026-09-23",
+  "ccfVersion": "CCF 推荐目录第七版（2026）",
+  "ccfPublishedAt": "2026-03-31",
+  "ccfSource": "https://www.ccf.org.cn/ccf/contentcore/resource/download?ID=112CF3BF7E1140ACEB271ADAED12A67ADFABB8FF099E40C2759502A85C8A281F",
+  "ccfAnnouncement": "https://www.ccf.org.cn/Academic_Evaluation/By_category/",
+  "ccfNote": "采用 2026 年正式第七版（4 月 9 日勘误版），人工智能会议表第 57–59 页。分领域 HTML 尚可能显示旧版。",
+  "conferences": [
+    {
+      "series": "CoRL",
+      "name": "Conference on Robot Learning",
+      "category": "RO",
+      "priority": "core",
+      "cycleMonths": [
+        5
+      ],
+      "editions": [
+        {
+          "year": 2026,
+          "website": "https://www.corl.org/",
+          "location": "Austin, Texas, USA",
+          "conferenceStart": "2026-11-09",
+          "conferenceEnd": "2026-11-12",
+          "abstractDeadline": "2026-05-25T23:59:59-12:00",
+          "paperDeadline": "2026-05-28T23:59:59-12:00",
+          "sourceUrl": "https://www.corl.org/contributions",
+          "verifiedAt": "2026-09-23",
+          "note": "",
+          "sourceNote": "官网标注全文截止为 5 月 28 日 AoE；官方 OpenReview 配置对应摘要注册 5 月 26 日、全文 5 月 29 日 11:59 UTC，等价于此处的 AoE 时间。"
+        },
+        {
+          "year": 2027,
+          "website": "https://www.corl.org/",
+          "location": null,
+          "conferenceStart": null,
+          "conferenceEnd": null,
+          "abstractDeadline": null,
+          "paperDeadline": null,
+          "sourceUrl": "https://www.corl.org/",
+          "verifiedAt": "2026-09-23",
+          "note": "截至核对日官网仍为 CoRL 2026，CoRL 2027 的会期、地点和投稿截止均未公布。",
+          "sourceNote": "截至核对日官网仍为 CoRL 2026，CoRL 2027 的会期、地点和投稿截止均未公布。"
+        }
+      ],
+      "ccf": null
+    },
+    {
+      "series": "RSS",
+      "name": "Robotics: Science and Systems",
+      "category": "RO",
+      "priority": "core",
+      "cycleMonths": [
+        1
+      ],
+      "editions": [
+        {
+          "year": 2026,
+          "website": "https://roboticsconference.org/",
+          "location": "Sydney, New South Wales, Australia",
+          "conferenceStart": "2026-07-13",
+          "conferenceEnd": "2026-07-17",
+          "abstractDeadline": "2026-01-23T23:59:59-12:00",
+          "paperDeadline": "2026-01-30T23:59:59-12:00",
+          "sourceUrl": "https://roboticsconference.org/information/cfp/",
+          "verifiedAt": "2026-09-23",
+          "note": "",
+          "sourceNote": "官方 CFP 的历史轮次为摘要/标题 1 月 23 日、全文 1 月 30 日，均 23:59 AoE；官方 OpenReview 时间为下一日 11:59 UTC 的等价表示。"
+        },
+        {
+          "year": 2027,
+          "website": "https://roboticsconference.org/",
+          "location": "Athens, Greece",
+          "conferenceStart": "2027-07-06",
+          "conferenceEnd": "2027-07-11",
+          "abstractDeadline": null,
+          "paperDeadline": null,
+          "sourceUrl": "https://roboticsconference.org/",
+          "verifiedAt": "2026-09-23",
+          "note": "会期已由官网公布；摘要/标题、全文及后续时间表均仍为 TBA，官网只预示截止时刻为 23:59 AoE。",
+          "sourceNote": "会期已由官网公布；摘要/标题、全文及后续时间表均仍为 TBA，官网只预示截止时刻为 23:59 AoE。"
+        }
+      ],
+      "ccf": null
+    },
+    {
+      "series": "ICRA",
+      "name": "IEEE International Conference on Robotics and Automation",
+      "category": "RO",
+      "priority": "core",
+      "cycleMonths": [
+        9
+      ],
+      "editions": [
+        {
+          "year": 2026,
+          "website": "https://2026.ieee-icra.org/",
+          "location": "Vienna, Austria",
+          "conferenceStart": "2026-06-01",
+          "conferenceEnd": "2026-06-05",
+          "abstractDeadline": null,
+          "paperDeadline": "2025-09-15T23:59:00-08:00",
+          "sourceUrl": "https://2026.ieee-icra.org/contribute/",
+          "verifiedAt": "2026-09-23",
+          "note": "官方原文使用 PST（UTC−8）。",
+          "sourceNote": "官网给出技术论文截止为 2025 年 9 月 15 日 23:59 PST；ICRA 2026 没有单独公布摘要注册截止，不能与最终稿截止混淆。"
+        },
+        {
+          "year": 2027,
+          "website": "https://2027.ieee-icra.org/",
+          "location": "Seoul, South Korea",
+          "conferenceStart": "2027-05-24",
+          "conferenceEnd": "2027-05-28",
+          "abstractDeadline": null,
+          "paperDeadline": "2026-09-16T23:59:00-08:00",
+          "sourceUrl": "https://2027.ieee-icra.org/announcements/call-for-technical-papers/",
+          "verifiedAt": "2026-09-23",
+          "note": "已延至 9 月 16 日；官方使用 PST（UTC−8）。",
+          "sourceNote": "官方公告标明论文截止由 9 月 15 日延至 9 月 16 日 23:59 PST；未公布独立摘要截止。"
+        }
+      ],
+      "ccf": "B"
+    },
+    {
+      "series": "IROS",
+      "name": "IEEE/RSJ International Conference on Intelligent Robots and Systems",
+      "category": "RO",
+      "priority": "core",
+      "cycleMonths": [
+        3
+      ],
+      "editions": [
+        {
+          "year": 2026,
+          "website": "https://2026.ieee-iros.org/",
+          "location": "Pittsburgh, Pennsylvania, USA",
+          "conferenceStart": "2026-09-27",
+          "conferenceEnd": "2026-10-01",
+          "abstractDeadline": null,
+          "paperDeadline": null,
+          "sourceUrl": "https://www.ieee-ras.org/event/2026-ieee-rsj-international-conference-on-intelligent-robots-and-systems-iros-61738/",
+          "verifiedAt": "2026-09-23",
+          "note": "IEEE RAS 已公布日期；具体时刻和时区待核实。",
+          "sourceNote": "IEEE RAS 官方日历列出论文截止日期为 2026 年 3 月 1 日，但未给出截止时刻或时区；因此精确 ISO 字段留空。",
+          "paperDeadlineDate": "2026-03-01"
+        },
+        {
+          "year": 2027,
+          "website": "https://2027.ieee-iros.org/",
+          "location": "Florence, Italy",
+          "conferenceStart": "2027-09-26",
+          "conferenceEnd": "2027-10-01",
+          "abstractDeadline": null,
+          "paperDeadline": null,
+          "sourceUrl": "https://www.ieee-ras.org/event/2027-ieee-rsj-international-conference-on-intelligent-robots-and-systems-iros-70525/",
+          "verifiedAt": "2026-09-23",
+          "note": "IEEE RAS 已公布日期；具体时刻和时区待核实。",
+          "sourceNote": "IEEE RAS 官方日历列出论文截止日期为 2027 年 3 月 1 日，但未给出截止时刻或时区；因此精确 ISO 字段留空。",
+          "paperDeadlineDate": "2027-03-01"
+        }
+      ],
+      "ccf": "C"
+    },
+    {
+      "series": "RLC",
+      "name": "Reinforcement Learning Conference",
+      "category": "ML",
+      "priority": "emerging",
+      "cycleMonths": [
+        3
+      ],
+      "editions": [
+        {
+          "year": 2026,
+          "website": "https://rl-conference.cc/2026/index.html",
+          "location": "Montréal, Québec, Canada",
+          "conferenceStart": "2026-08-15",
+          "conferenceEnd": "2026-08-18",
+          "abstractDeadline": "2026-03-05T23:59:59-12:00",
+          "paperDeadline": "2026-03-05T23:59:59-12:00",
+          "sourceUrl": "https://rl-conference.cc/2026/callforpapers.html",
+          "verifiedAt": "2026-09-23",
+          "note": "",
+          "sourceNote": "官方 CFP 将摘要截止从 3 月 1 日延至 3 月 5 日，全文截止为 3 月 5 日，均 23:59 AoE；官方 OpenReview 配置对应 3 月 6 日 12:00 UTC。"
+        },
+        {
+          "year": 2027,
+          "website": "https://rl-conference.cc/",
+          "location": "Brown University, USA; Odense, Denmark（与 EWRL 联合欧洲场）",
+          "conferenceStart": null,
+          "conferenceEnd": null,
+          "abstractDeadline": null,
+          "paperDeadline": null,
+          "sourceUrl": "https://rl-conference.cc/",
+          "verifiedAt": "2026-09-23",
+          "note": "官网已公布 2027 双地点，并仅说明 Brown 在 8 月上旬、Odense 在 8 月下旬；具体会期、摘要截止和全文截止均未公布。",
+          "sourceNote": "官网已公布 2027 双地点，并仅说明 Brown 在 8 月上旬、Odense 在 8 月下旬；具体会期、摘要截止和全文截止均未公布。"
+        }
+      ],
+      "ccf": null
+    },
+    {
+      "series": "NeurIPS",
+      "name": "Conference on Neural Information Processing Systems",
+      "category": "ML",
+      "priority": "core",
+      "cycleMonths": [
+        5
+      ],
+      "editions": [
+        {
+          "year": 2026,
+          "website": "https://neurips.cc/Conferences/2026/",
+          "location": null,
+          "conferenceStart": null,
+          "conferenceEnd": null,
+          "abstractDeadline": "2026-05-04T23:59:59-12:00",
+          "paperDeadline": "2026-05-06T23:59:59-12:00",
+          "sourceUrl": "https://neurips.cc/Conferences/2026/CallForPapers",
+          "verifiedAt": "2026-09-23",
+          "note": "",
+          "sourceNote": "主会投稿，官方 CFP 已公布（AoE）"
+        },
+        {
+          "year": 2027,
+          "website": "https://neurips.cc/",
+          "location": null,
+          "conferenceStart": null,
+          "conferenceEnd": null,
+          "abstractDeadline": null,
+          "paperDeadline": null,
+          "sourceUrl": "https://neurips.cc/",
+          "verifiedAt": "2026-09-23",
+          "note": "下一届截稿日期尚未核实",
+          "sourceNote": "下一届截稿日期尚未核实"
+        }
+      ],
+      "ccf": "A"
+    },
+    {
+      "series": "ICLR",
+      "name": "International Conference on Learning Representations",
+      "category": "ML",
+      "priority": "core",
+      "cycleMonths": [
+        9,
+        10
+      ],
+      "editions": [
+        {
+          "year": 2027,
+          "website": "https://iclr.cc/Conferences/2027",
+          "location": null,
+          "conferenceStart": null,
+          "conferenceEnd": null,
+          "abstractDeadline": "2026-09-18T23:59:59-12:00",
+          "paperDeadline": "2026-09-25T23:59:59-12:00",
+          "sourceUrl": "https://iclr.cc/Conferences/2027/CallForPapers",
+          "verifiedAt": "2026-09-23",
+          "note": "",
+          "sourceNote": "主会投稿，官方 CFP 已公布（AoE）"
+        },
+        {
+          "year": 2028,
+          "website": "https://iclr.cc/",
+          "location": null,
+          "conferenceStart": null,
+          "conferenceEnd": null,
+          "abstractDeadline": null,
+          "paperDeadline": null,
+          "sourceUrl": "https://iclr.cc/",
+          "verifiedAt": "2026-09-23",
+          "note": "下一届截稿日期尚未核实",
+          "sourceNote": "下一届截稿日期尚未核实"
+        }
+      ],
+      "ccf": "A"
+    },
+    {
+      "series": "ICML",
+      "name": "International Conference on Machine Learning",
+      "category": "ML",
+      "priority": "core",
+      "cycleMonths": [
+        1,
+        2
+      ],
+      "editions": [
+        {
+          "year": 2026,
+          "website": "https://icml.cc/Conferences/2026",
+          "location": "Seoul, South Korea",
+          "conferenceStart": "2026-07-06",
+          "conferenceEnd": "2026-07-11",
+          "abstractDeadline": "2026-01-23T23:59:59-12:00",
+          "paperDeadline": "2026-01-28T23:59:59-12:00",
+          "sourceUrl": "https://icml.cc/Conferences/2026/CallForPapers",
+          "verifiedAt": "2026-09-23",
+          "note": "",
+          "sourceNote": "主会投稿，官方 CFP 已公布（AoE）"
+        },
+        {
+          "year": 2027,
+          "website": "https://icml.cc/",
+          "location": null,
+          "conferenceStart": null,
+          "conferenceEnd": null,
+          "abstractDeadline": null,
+          "paperDeadline": null,
+          "sourceUrl": "https://icml.cc/",
+          "verifiedAt": "2026-09-23",
+          "note": "下一届截稿日期尚未核实",
+          "sourceNote": "下一届截稿日期尚未核实"
+        }
+      ],
+      "ccf": "A"
+    },
+    {
+      "series": "CVPR",
+      "name": "IEEE/CVF Conference on Computer Vision and Pattern Recognition",
+      "category": "CV",
+      "priority": "core",
+      "cycleMonths": [
+        11
+      ],
+      "editions": [
+        {
+          "year": 2027,
+          "website": "https://cvpr.thecvf.com/Conferences/2027",
+          "location": "Seattle, USA",
+          "conferenceStart": "2027-06-20",
+          "conferenceEnd": "2027-06-25",
+          "abstractDeadline": "2026-11-10T23:59:59-12:00",
+          "paperDeadline": "2026-11-16T23:59:59-12:00",
+          "sourceUrl": "https://cvpr.thecvf.com/Conferences/2027/CallForPapers",
+          "verifiedAt": "2026-09-23",
+          "note": "",
+          "sourceNote": "主会注册与投稿，官方 CFP 已公布（AoE）"
+        },
+        {
+          "year": 2028,
+          "website": "https://cvpr.thecvf.com/",
+          "location": null,
+          "conferenceStart": null,
+          "conferenceEnd": null,
+          "abstractDeadline": null,
+          "paperDeadline": null,
+          "sourceUrl": "https://cvpr.thecvf.com/",
+          "verifiedAt": "2026-09-23",
+          "note": "下一届截稿日期尚未核实",
+          "sourceNote": "下一届截稿日期尚未核实"
+        }
+      ],
+      "ccf": "A"
+    },
+    {
+      "series": "ICCV",
+      "name": "IEEE/CVF International Conference on Computer Vision",
+      "category": "CV",
+      "priority": "core",
+      "cycleMonths": [
+        3
+      ],
+      "editions": [
+        {
+          "year": 2025,
+          "website": "https://iccv.thecvf.com/Conferences/2025",
+          "location": "Honolulu, Hawaii, USA",
+          "conferenceStart": "2025-10-19",
+          "conferenceEnd": "2025-10-23",
+          "abstractDeadline": "2025-03-03T23:59:00-10:00",
+          "paperDeadline": "2025-03-07T23:59:00-10:00",
+          "sourceUrl": "https://iccv.thecvf.com/Conferences/2025/CallForPapers",
+          "verifiedAt": "2026-09-23",
+          "note": "",
+          "sourceNote": "主会注册与投稿，官方 CFP 已公布（HST）"
+        },
+        {
+          "year": 2027,
+          "website": "https://iccv.thecvf.com/",
+          "location": null,
+          "conferenceStart": null,
+          "conferenceEnd": null,
+          "abstractDeadline": null,
+          "paperDeadline": null,
+          "sourceUrl": "https://iccv.thecvf.com/",
+          "verifiedAt": "2026-09-23",
+          "note": "下一届截稿日期尚未核实",
+          "sourceNote": "下一届截稿日期尚未核实"
+        }
+      ],
+      "ccf": "A"
+    },
+    {
+      "series": "ECCV",
+      "name": "European Conference on Computer Vision",
+      "category": "CV",
+      "priority": "core",
+      "cycleMonths": [
+        3
+      ],
+      "editions": [
+        {
+          "year": 2026,
+          "website": "https://eccv.ecva.net/Conferences/2026",
+          "location": null,
+          "conferenceStart": null,
+          "conferenceEnd": null,
+          "abstractDeadline": "2026-02-26T23:00:00+01:00",
+          "paperDeadline": "2026-03-05T23:00:00+01:00",
+          "sourceUrl": "https://eccv.ecva.net/Conferences/2026/CallForPapers",
+          "verifiedAt": "2026-09-23",
+          "note": "",
+          "sourceNote": "主会注册与投稿，官方 CFP 已公布（CET）"
+        },
+        {
+          "year": 2028,
+          "website": "https://eccv.ecva.net/",
+          "location": null,
+          "conferenceStart": null,
+          "conferenceEnd": null,
+          "abstractDeadline": null,
+          "paperDeadline": null,
+          "sourceUrl": "https://eccv.ecva.net/",
+          "verifiedAt": "2026-09-23",
+          "note": "下一届截稿日期尚未核实",
+          "sourceNote": "下一届截稿日期尚未核实"
+        }
+      ],
+      "ccf": "B"
+    },
+    {
+      "series": "AAAI",
+      "name": "AAAI Conference on Artificial Intelligence",
+      "category": "AI",
+      "priority": "backup",
+      "cycleMonths": [
+        7,
+        8,
+        9
+      ],
+      "editions": [
+        {
+          "year": 2027,
+          "website": "https://aaai.org/conference/aaai/aaai-27/",
+          "location": "Montréal, Canada",
+          "conferenceStart": "2027-02-16",
+          "conferenceEnd": "2027-02-23",
+          "abstractDeadline": "2026-07-21T23:59:00-12:00",
+          "paperDeadline": "2026-07-28T23:59:00-12:00",
+          "sourceUrl": "https://aaai.org/conference/aaai/aaai-27/",
+          "verifiedAt": "2026-09-23",
+          "note": "",
+          "sourceNote": "主会投稿，官方作者时间表已公布（AoE）"
+        },
+        {
+          "year": 2028,
+          "website": "https://aaai.org/conference/aaai/",
+          "location": null,
+          "conferenceStart": null,
+          "conferenceEnd": null,
+          "abstractDeadline": null,
+          "paperDeadline": null,
+          "sourceUrl": "https://aaai.org/conference/aaai/",
+          "verifiedAt": "2026-09-23",
+          "note": "下一届截稿日期尚未核实",
+          "sourceNote": "下一届截稿日期尚未核实"
+        }
+      ],
+      "ccf": "A"
+    },
+    {
+      "series": "IJCAI",
+      "name": "International Joint Conference on Artificial Intelligence",
+      "category": "AI",
+      "priority": "backup",
+      "cycleMonths": [
+        1,
+        2
+      ],
+      "editions": [
+        {
+          "year": 2026,
+          "website": "https://2026.ijcai.org/",
+          "location": "Bremen, Germany",
+          "conferenceStart": "2026-08-15",
+          "conferenceEnd": "2026-08-21",
+          "abstractDeadline": "2026-01-12T23:59:00-12:00",
+          "paperDeadline": "2026-01-19T23:59:00-12:00",
+          "sourceUrl": "https://2026.ijcai.org/important-dates/",
+          "verifiedAt": "2026-09-23",
+          "note": "",
+          "sourceNote": "IJCAI-ECAI 主会投稿，官方重要日期已公布（AoE）"
+        },
+        {
+          "year": 2027,
+          "website": "https://www.ijcai.org/",
+          "location": null,
+          "conferenceStart": null,
+          "conferenceEnd": null,
+          "abstractDeadline": null,
+          "paperDeadline": null,
+          "sourceUrl": "https://www.ijcai.org/",
+          "verifiedAt": "2026-09-23",
+          "note": "下一届截稿日期尚未核实",
+          "sourceNote": "下一届截稿日期尚未核实"
+        }
+      ],
+      "ccf": "B"
+    }
+  ]
+}
