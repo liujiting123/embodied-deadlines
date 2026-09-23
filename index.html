@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f4f6fb">
-  <meta name="description" content="精选具身智能会议的投稿截止日期、实时倒计时与 CCF 分级。机器人、机器学习、计算机视觉，一个清晰的全年投稿日历。">
+  <meta name="description" content="精选具身智能会议与期刊，查看会议截止日期、实时倒计时、期刊投稿方式与 CCF 分级。">
   <title>Embodied Deadlines · 具身智能投稿日历</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232e55db'/%3E%3Cpath d='M9 9h14v4H13v3h8v4h-8v3h10v3H9z' fill='white'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="./styles.css">
@@ -22,6 +22,11 @@
         <div><p class="eyebrow">RESEARCH CALENDAR</p><h1>具身智能<span>投稿日历</span></h1><p class="intro">机器人 · 机器学习 · 计算机视觉</p></div>
         <div class="date-block"><span id="today-label"></span><span id="verified-label">正在载入会议数据</span></div>
       </div>
+      <div class="publication-tabs" role="tablist" aria-label="投稿类型">
+        <button id="conference-tab" role="tab" aria-selected="true" aria-controls="conference-panel" data-section="conferences">会议截稿</button>
+        <button id="journal-tab" role="tab" aria-selected="false" aria-controls="journal-panel" tabindex="-1" data-section="journals">期刊投稿</button>
+      </div>
+      <section id="conference-panel" role="tabpanel" aria-labelledby="conference-tab">
       <section class="overview" aria-label="投稿概览">
         <div class="overview-item"><span class="overview-label">关注会议</span><strong id="series-count">11</strong><span class="overview-note" id="followed-note">核心会议 + RLC</span></div>
         <div class="overview-item"><span class="overview-label">未来 90 天截稿</span><strong id="soon-count">—</strong><span class="overview-note" id="soon-note">按全文截止日期</span></div>
@@ -51,8 +56,24 @@
       <section id="results" tabindex="-1" aria-label="会议截止日期"><p class="loading">正在读取会议日期…</p></section>
       <section id="rhythm" hidden aria-label="全年投稿节奏"></section>
       <aside class="data-note"><span class="note-symbol" aria-hidden="true">i</span><div><p>倒计时按全文截止时间计算；摘要或注册截止可能更早。日期待公布时，仅展示往届节奏。</p><p id="ccf-note">CCF 分级以官方推荐目录为准；未收录不等于 C 类。</p></div></aside>
+      </section>
+      <section id="journal-panel" role="tabpanel" aria-labelledby="journal-tab" hidden>
+        <div class="journal-intro"><div><h2>全年可规划的期刊投稿</h2><p>常规研究论文通常滚动收稿；特刊、返修和会议展示申请另有时间要求。</p></div><span class="rolling-label">常规投稿 · 无统一 DDL</span></div>
+        <section class="workbench journal-toolbar" aria-label="筛选期刊">
+          <div class="category-filters" role="group" aria-label="期刊方向">
+            <button class="category active" data-journal-category="all" aria-pressed="true">全部方向</button>
+            <button class="category" data-journal-category="RO" aria-pressed="false">机器人</button>
+            <button class="category" data-journal-category="ML" aria-pressed="false">机器学习</button>
+            <button class="category" data-journal-category="CV" aria-pressed="false">计算机视觉</button>
+          </div>
+          <label class="search-field"><span aria-hidden="true">⌕</span><input id="journal-search" type="search" placeholder="查找期刊，如 RA-L" aria-label="查找期刊"></label>
+        </section>
+        <div class="results-toolbar"><p id="journal-count" role="status" aria-live="polite">正在载入期刊…</p><span class="journal-type-note">常规研究论文</span></div>
+        <section id="journal-results" class="journal-grid" tabindex="-1" aria-label="期刊列表"><p class="loading">正在读取期刊资料…</p></section>
+        <aside class="data-note"><span class="note-symbol" aria-hidden="true">i</span><div><p>滚动收稿不代表保证录用或固定出结果时间；投稿前请查看作者指南及临时停收公告。</p><p>RA-L、T-RO 的已接收论文可按条件申请会议展示，展示申请窗口与期刊投稿截止不同。</p><p id="journal-ccf-note">CCF 分级以官方推荐目录为准；未收录不等于 C 类。</p></div></aside>
+      </section>
     </main>
-    <footer><span>Embodied Deadlines</span><div><a href="https://mlciv.com/ai-deadlines/?sub=CV,RO" target="_blank" rel="noopener noreferrer">灵感来源</a><a href="https://github.com/liujiting123/embodied-deadlines/blob/main/data/conferences.json" target="_blank" rel="noopener noreferrer">查看 / 更新数据 <span aria-hidden="true">↗</span></a></div></footer>
+    <footer><span>Embodied Deadlines</span><div><a href="https://mlciv.com/ai-deadlines/?sub=CV,RO" target="_blank" rel="noopener noreferrer">灵感来源</a><a id="data-link" href="https://github.com/liujiting123/embodied-deadlines/blob/main/data/conferences.json" target="_blank" rel="noopener noreferrer">查看 / 更新数据 <span aria-hidden="true">↗</span></a></div></footer>
   </div>
   <noscript><p class="noscript">请启用 JavaScript 查看倒计时。也可以在 GitHub 仓库中查看完整会议数据。</p></noscript>
 </body>

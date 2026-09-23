@@ -6,12 +6,15 @@ const safeUrl = value => { try { const url = new URL(value); return url.protocol
 const categoryNames = { RO: '机器人', ML: '机器学习', CV: '计算机视觉', AI: '综合 AI' };
 const params = new URLSearchParams(location.search);
 const initialYear = params.get('year');
-const state = { category: ['RO', 'ML', 'CV', 'AI'].includes(params.get('sub')) ? params.get('sub') : 'all',
+const state = { section: params.get('tab') === 'journals' ? 'journals' : 'conferences',
+  category: ['RO', 'ML', 'CV', 'AI'].includes(params.get('sub')) ? params.get('sub') : 'all',
   year: initialYear && /^20\d\d$/.test(initialYear) ? initialYear : 'current',
   status: ['open', 'pending', 'closed'].includes(params.get('status')) ? params.get('status') : 'all',
   timezone: 'Asia/Shanghai', backup: params.get('backup') === '1', query: '', view: 'list' };
 if (state.category === 'AI') state.backup = true;
 let data;
+let journalData;
+const journalState = { category: 'all', query: '' };
 let lastStateSignature = '';
 
 function link(url, label, className = '') {
@@ -93,7 +96,7 @@ function render() {
   $('#next-conference').textContent = next ? `${next.conference.series} ${next.edition.year}` : '等待新日期';
   $('#next-date').textContent = next ? next.edition.paperDeadline ? formatDeadline(next.edition.paperDeadline, state.timezone) : `${next.edition.paperDeadlineDate} · 时刻待核实` : '已公布轮次均已截止';
   $('#today-label').textContent = new Intl.DateTimeFormat('zh-CN', { timeZone: 'Asia/Shanghai', year: 'numeric', month: 'long', day: 'numeric' }).format(now);
-  $('#verified-label').textContent = `日期核对 ${data.updatedAt}`;
+  if (state.section === 'conferences') $('#verified-label').textContent = `日期核对 ${data.updatedAt}`;
   $('#ccf-note').innerHTML = `分级依据${link(data.ccfSource, escape(data.ccfVersion))}；“未收录”不等于 C 类，也不代表学术质量评价。`;
   $('#results').hidden = state.view !== 'list';
   $('#rhythm').hidden = state.view !== 'rhythm';
@@ -121,6 +124,86 @@ function syncControls() {
   document.querySelectorAll('[data-view]').forEach(button => { const active = button.dataset.view === state.view; button.classList.toggle('active', active); button.setAttribute('aria-pressed', active); });
 }
 
+function activateSection(section) {
+  state.section = section;
+  const journals = section === 'journals';
+  $('#conference-panel').hidden = journals;
+  $('#journal-panel').hidden = !journals;
+  document.querySelectorAll('[data-section]').forEach(button => {
+    const active = button.dataset.section === section;
+    button.setAttribute('aria-selected', active);
+    button.tabIndex = active ? 0 : -1;
+  });
+  $('.skip-link').href = journals ? '#journal-results' : '#results';
+  $('.skip-link').textContent = journals ? '跳至期刊列表' : '跳至会议列表';
+  $('#data-link').href = `https://github.com/liujiting123/embodied-deadlines/blob/main/data/${journals ? 'journals' : 'conferences'}.json`;
+  const activeData = journals ? journalData : data;
+  $('#verified-label').textContent = activeData ? `${journals ? '资料' : '日期'}核对 ${activeData.updatedAt}` : `正在载入${journals ? '期刊' : '会议'}数据`;
+  const url = new URL(location.href);
+  if (journals) url.searchParams.set('tab', 'journals');
+  else url.searchParams.delete('tab');
+  history.replaceState(null, '', url);
+}
+
+function renderJournals() {
+  if (!journalData) return;
+  const query = journalState.query.trim().toLowerCase();
+  const journals = journalData.journals.filter(journal => journalState.category === 'all' || journal.categories.includes(journalState.category))
+    .filter(journal => `${journal.acronym} ${journal.name} ${journal.scope}`.toLowerCase().includes(query));
+  $('#journal-count').textContent = `${journals.length} 本期刊 · 共关注 ${journalData.journals.length} 本`;
+  $('#journal-results').innerHTML = journals.length ? journals.map(journal => {
+    const grade = journal.ccf;
+    return `<article class="journal-card" data-journal="${escape(journal.id)}">
+      <div class="journal-card-top"><h2>${link(journal.website, escape(journal.acronym))}</h2>${link(journalData.ccfSource, `<span class="badge ccf-${grade ? grade.toLowerCase() : 'none'}" title="${escape(journalData.ccfVersion)}">${grade ? `CCF ${escape(grade)}` : 'CCF 未收录'}</span>`)}</div>
+      <p class="journal-name">${escape(journal.name)}</p><div class="journal-categories">${journal.categories.map(category => `<span class="category-tag">${escape(categoryNames[category])}</span>`).join('<span class="meta-separator"> / </span>')}</div>
+      <p class="journal-scope">${escape(journal.scope)}</p>
+      <div class="journal-submission"><span>常规投稿</span><strong>${escape(journal.submissionMode)}</strong></div>
+      <p class="journal-note">${escape(journal.note)}</p>
+      <div class="journal-links">${link(journal.authorGuide, '投稿与作者指南 ↗')}${journal.presentationGuide ? link(journal.presentationGuide, '会议展示规则 ↗') : link(journal.website, '期刊官网 ↗')}</div>
+    </article>`;
+  }).join('') : '<div class="empty"><strong>没有符合条件的期刊</strong>试试更换方向或关键词。<br><button id="reset-journals">重置筛选</button></div>';
+  $('#reset-journals')?.addEventListener('click', () => {
+    journalState.category = 'all'; journalState.query = ''; $('#journal-search').value = '';
+    syncJournalFilters(); renderJournals();
+  });
+  $('#journal-ccf-note').innerHTML = `分级依据${link(journalData.ccfSource, escape(journalData.ccfVersion))}；“未收录”不等于 C 类，也不代表学术质量评价。`;
+  if (state.section === 'journals') $('#verified-label').textContent = `资料核对 ${journalData.updatedAt}`;
+}
+
+function syncJournalFilters() {
+  document.querySelectorAll('[data-journal-category]').forEach(button => {
+    const active = button.dataset.journalCategory === journalState.category;
+    button.classList.toggle('active', active); button.setAttribute('aria-pressed', active);
+  });
+}
+
+async function loadJournals() {
+  try {
+    const response = await fetch('./data/journals.json');
+    if (!response.ok) throw new Error(`Journal data request failed: ${response.status}`);
+    journalData = await response.json(); renderJournals();
+  } catch (error) {
+    console.error(error);
+    $('#journal-results').innerHTML = '<div class="error"><strong>期刊数据暂时无法载入</strong>请检查网络后 <button id="retry-journals">重新载入</button>。</div>';
+    $('#journal-count').textContent = '期刊数据载入失败';
+    $('#retry-journals').addEventListener('click', loadJournals);
+  }
+}
+
+document.querySelectorAll('[data-section]').forEach(button => {
+  button.addEventListener('click', () => activateSection(button.dataset.section));
+  button.addEventListener('keydown', event => {
+    if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+    event.preventDefault();
+    const section = event.key === 'Home' ? 'conferences' : event.key === 'End' ? 'journals' : state.section === 'conferences' ? 'journals' : 'conferences';
+    activateSection(section); document.querySelector(`[data-section="${section}"]`).focus();
+  });
+});
+document.querySelectorAll('[data-journal-category]').forEach(button => button.addEventListener('click', () => {
+  journalState.category = button.dataset.journalCategory; syncJournalFilters(); renderJournals();
+}));
+$('#journal-search').addEventListener('input', event => { journalState.query = event.target.value; renderJournals(); });
+
 document.querySelectorAll('[data-category]').forEach(button => button.addEventListener('click', () => { state.category = button.dataset.category; syncControls(); render(); }));
 document.querySelectorAll('[data-view]').forEach(button => button.addEventListener('click', () => { state.view = button.dataset.view; syncControls(); render(); }));
 for (const id of ['year', 'status', 'timezone']) $(`#${id}`).addEventListener('change', event => { state[id] = event.target.value; render(); });
@@ -143,5 +226,7 @@ async function load() {
     $('#retry').addEventListener('click', load);
   }
 }
+activateSection(state.section);
 load();
+loadJournals();
 setInterval(() => { if (!data) return; const now = Date.now(); if (stateSignature(now) !== lastStateSignature) render(); else updateCountdowns(now); }, 1000);

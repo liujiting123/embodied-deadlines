@@ -1,0 +1,179 @@
+{
+  "updatedAt": "2026-09-23",
+  "ccfVersion": "CCF 推荐目录第七版（2026）",
+  "ccfSource": "https://www.ccf.org.cn/ccf/contentcore/resource/download?ID=112CF3BF7E1140ACEB271ADAED12A67ADFABB8FF099E40C2759502A85C8A281F",
+  "ccfNote": "以正式第七版为准。TPAMI、IJCV、JMLR 见人工智能 A 类期刊表第 51 页；T-RO 以 TR / IEEE Transactions on Robotics 列于交叉、综合、新兴 B 类第 68 页。其他所列期刊未收录。",
+  "journals": [
+    {
+      "id": "tro",
+      "acronym": "T-RO",
+      "name": "IEEE Transactions on Robotics",
+      "categories": [
+        "RO"
+      ],
+      "ccf": "B",
+      "scope": "完整、深入的机器人理论、方法与系统研究，涵盖控制、操作、感知和学习。",
+      "submissionMode": "滚动收稿 · 无统一 DDL",
+      "note": "符合条件的已接收论文可以申请在 ICRA、IROS 等会议展示。",
+      "website": "https://www.ieee-ras.org/publications/t-ro/",
+      "authorGuide": "https://www.ieee-ras.org/publications/t-ro/t-ro-information-for-authors/",
+      "presentationGuide": "https://www.ieee-ras.org/publications/t-ro/",
+      "sources": [
+        "https://www.ieee-ras.org/publications/t-ro/"
+      ],
+      "verifiedAt": "2026-09-23"
+    },
+    {
+      "id": "ijrr",
+      "acronym": "IJRR",
+      "name": "The International Journal of Robotics Research",
+      "categories": [
+        "RO"
+      ],
+      "ccf": null,
+      "scope": "机器人科学与系统研究，强调扎实、可供后续研究建立在其上的长期贡献。",
+      "submissionMode": "滚动收稿 · 无统一 DDL",
+      "note": "常规研究论文可直接提交；综述提案和特刊遵循各自的投稿要求。",
+      "website": "https://journals.sagepub.com/home/ijr",
+      "authorGuide": "https://journals.sagepub.com/author-instructions/ijr",
+      "sources": [
+        "https://journals.sagepub.com/author-instructions/ijr"
+      ],
+      "verifiedAt": "2026-09-23"
+    },
+    {
+      "id": "ral",
+      "acronym": "RA-L",
+      "name": "IEEE Robotics and Automation Letters",
+      "categories": [
+        "RO"
+      ],
+      "ccf": null,
+      "scope": "贡献集中、篇幅精简的机器人与自动化研究，注重及时发表新的方法和结果。",
+      "submissionMode": "全年收稿 · 无统一 DDL",
+      "note": "官方规定投稿后 6 个月内给出最终决定；已接收论文的会议展示另有申请窗口。",
+      "website": "https://www.ieee-ras.org/publications/ra-l/",
+      "authorGuide": "https://www.ieee-ras.org/publications/ra-l/ra-l-information-for-authors/",
+      "presentationGuide": "https://www.ieee-ras.org/publications/ra-l/",
+      "sources": [
+        "https://www.ieee-ras.org/publications/ra-l/ra-l-information-for-authors/",
+        "https://www.ieee-ras.org/publications/ra-l/"
+      ],
+      "verifiedAt": "2026-09-23"
+    },
+    {
+      "id": "science-robotics",
+      "acronym": "Science Robotics",
+      "name": "Science Robotics · AAAS",
+      "categories": [
+        "RO"
+      ],
+      "ccf": null,
+      "scope": "机器人科学与工程的重要进展，涵盖理论、系统能力、机器人设计和实际应用。",
+      "submissionMode": "无统一 DDL",
+      "note": "常规研究论文通过期刊投稿系统提交；稿件类型与要求见官方作者指南。",
+      "website": "https://www.science.org/journal/scirobotics",
+      "authorGuide": "https://www.science.org/content/page/science-robotics-information-authors",
+      "sources": [
+        "https://promo.aaas.org/ScienceRobotics/callforpapers/",
+        "https://advertising.science.org/wp-content/uploads/2026/03/2026_Science_MediaKit_Final_links.pdf"
+      ],
+      "verifiedAt": "2026-09-23"
+    },
+    {
+      "id": "nature-machine-intelligence",
+      "acronym": "Nature Machine Intelligence",
+      "name": "Nature Machine Intelligence · Nature Portfolio",
+      "categories": [
+        "ML",
+        "RO"
+      ],
+      "ccf": null,
+      "scope": "机器学习、机器人与人工智能研究，以及这些领域与其他学科的交叉成果。",
+      "submissionMode": "滚动收稿 · 无统一 DDL",
+      "note": "研究 Article、Analysis 等稿件按各自要求准备；专题征稿另行公告。",
+      "website": "https://www.nature.com/natmachintell/",
+      "authorGuide": "https://www.nature.com/natmachintell/submission-guidelines",
+      "sources": [
+        "https://www.nature.com/natmachintell/aims",
+        "https://www.nature.com/natmachintell/submission-guidelines"
+      ],
+      "verifiedAt": "2026-09-23"
+    },
+    {
+      "id": "tpami",
+      "acronym": "TPAMI",
+      "name": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+      "categories": [
+        "CV",
+        "ML"
+      ],
+      "ccf": "A",
+      "scope": "计算机视觉、模式识别与机器学习，适合视觉感知、表征和多模态方法研究。",
+      "submissionMode": "滚动收稿 · 无统一 DDL",
+      "note": "常规论文滚动处理；投向特刊或专题时，需遵循对应征稿通知。",
+      "website": "https://www.computer.org/csdl/journal/tp",
+      "authorGuide": "https://www.computer.org/digital-library/journals/tp/cfp-ieee-pattern-analysis-machine-intelligence",
+      "sources": [
+        "https://www.computer.org/digital-library/journals/tp/cfp-ieee-pattern-analysis-machine-intelligence"
+      ],
+      "verifiedAt": "2026-09-23"
+    },
+    {
+      "id": "ijcv",
+      "acronym": "IJCV",
+      "name": "International Journal of Computer Vision",
+      "categories": [
+        "CV"
+      ],
+      "ccf": "A",
+      "scope": "计算机视觉的科学与工程研究，包括三维感知、视觉学习和机器人视觉应用。",
+      "submissionMode": "滚动收稿 · 无统一 DDL",
+      "note": "接收常规研究、短篇及综述等稿件；特刊时间以单独征稿通知为准。",
+      "website": "https://link.springer.com/journal/11263",
+      "authorGuide": "https://link.springer.com/journal/11263/submission-guidelines",
+      "sources": [
+        "https://link.springer.com/journal/11263/aims-and-scope",
+        "https://link.springer.com/journal/11263/submission-guidelines"
+      ],
+      "verifiedAt": "2026-09-23"
+    },
+    {
+      "id": "jmlr",
+      "acronym": "JMLR",
+      "name": "Journal of Machine Learning Research",
+      "categories": [
+        "ML"
+      ],
+      "ccf": "A",
+      "scope": "机器学习的方法、理论与实证研究，适合核心贡献在学习问题本身的成果。",
+      "submissionMode": "滚动收稿 · 无统一 DDL",
+      "note": "按常规研究稿要求提交；内容范围、格式与既有工作的关系见作者指南。",
+      "website": "https://www.jmlr.org/",
+      "authorGuide": "https://www.jmlr.org/author-info.html",
+      "sources": [
+        "https://www.jmlr.org/author-info.html"
+      ],
+      "verifiedAt": "2026-09-23"
+    },
+    {
+      "id": "tmlr",
+      "acronym": "TMLR",
+      "name": "Transactions on Machine Learning Research",
+      "categories": [
+        "ML"
+      ],
+      "ccf": null,
+      "scope": "机器学习研究，强调技术正确性与证据对结论的支撑，采用公开的双盲评审流程。",
+      "submissionMode": "滚动收稿 · 无统一 DDL",
+      "note": "使用 OpenReview；曾在年末假期暂停新稿，投稿前请查看最新接收公告。",
+      "website": "https://jmlr.org/tmlr/",
+      "authorGuide": "https://jmlr.org/tmlr/submissions.html",
+      "sources": [
+        "https://jmlr.org/tmlr/",
+        "https://jmlr.org/tmlr/submissions.html"
+      ],
+      "verifiedAt": "2026-09-23"
+    }
+  ]
+}
