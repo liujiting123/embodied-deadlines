@@ -3,11 +3,11 @@ import { countdown, deadlineState, formatDeadline, getRows, selectEdition } from
 const $ = selector => document.querySelector(selector);
 const escape = value => String(value ?? '').replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[character]));
 const safeUrl = value => { try { const url = new URL(value); return url.protocol === 'https:' ? escape(url.href) : '#'; } catch { return '#'; } };
-const categoryNames = { RO: '机器人', ML: '机器学习', CV: '计算机视觉', AI: '综合 AI' };
+const categoryNames = { RO: '机器人', ML: '机器学习', CV: '计算机视觉', CG: '图形与仿真', AI: '综合 AI' };
 const params = new URLSearchParams(location.search);
 const initialYear = params.get('year');
 const state = { section: params.get('tab') === 'journals' ? 'journals' : 'conferences',
-  category: ['RO', 'ML', 'CV', 'AI'].includes(params.get('sub')) ? params.get('sub') : 'all',
+  category: ['RO', 'ML', 'CV', 'CG', 'AI'].includes(params.get('sub')) ? params.get('sub') : 'all',
   year: initialYear && /^20\d\d$/.test(initialYear) ? initialYear : 'current',
   status: ['open', 'pending', 'closed'].includes(params.get('status')) ? params.get('status') : 'all',
   timezone: 'Asia/Shanghai', backup: params.get('backup') === '1', query: '', view: 'list' };
@@ -51,7 +51,7 @@ function renderCard({ conference, edition, status }, now) {
   dates += link(edition.sourceUrl || edition.website, '官方日期来源 ↗', 'source-link');
   const countdownHtml = status === 'open' ? `<span class="countdown-label">距全文截止</span><span class="countdown-value"><strong data-days></strong><em>天</em></span><span class="countdown-clock" data-clock></span>` : `<span class="status-text">${status === 'pending' ? '日期待公布' : status === 'date-only' ? '时刻待核实' : '本届已截止'}</span><p class="status-caption">${status === 'closed' ? '可查看下一届安排' : '暂不显示倒计时'}</p>`;
   return `<article class="conference-card ${status}${status === 'open' && days < 7 ? ' urgent' : ''}" data-series="${escape(conference.series)}" data-status="${status}">
-    <div class="card-info"><div class="card-title"><h2>${link(edition.website, `${escape(conference.series)}<span class="edition-year">${edition.year}</span>`)}</h2>${link(data.ccfSource, `<span class="badge ccf-${grade ? grade.toLowerCase() : 'none'}" title="${escape(data.ccfVersion)}">${badge}</span>`)}${tier}</div><p class="full-name">${escape(conference.name)}</p><div class="card-meta"><span class="category-tag">${escape(conference.category)} · ${escape(categoryNames[conference.category])}</span><span class="meta-separator">/</span><span>${escape(dateRange(edition))}</span></div></div>
+    <div class="card-info"><div class="card-title"><h2>${link(edition.website, `${escape(conference.series)}<span class="edition-year">${edition.year}</span>`)}</h2>${link(data.ccfSource, `<span class="badge ccf-${grade ? grade.toLowerCase() : 'none'}" title="${escape(data.ccfVersion)}">${badge}</span>`)}${tier}</div><p class="full-name">${escape(conference.name)}${conference.scope ? `<br>${escape(conference.scope)}` : ''}</p><div class="card-meta"><span class="category-tag">${escape(conference.category)} · ${escape(categoryNames[conference.category])}</span><span class="meta-separator">/</span><span>${escape(dateRange(edition))}</span></div></div>
     <div class="card-date">${dates}</div><div class="card-countdown" ${status === 'open' ? `data-deadline="${escape(edition.paperDeadline)}"` : ''}>${countdownHtml}</div></article>`;
 }
 

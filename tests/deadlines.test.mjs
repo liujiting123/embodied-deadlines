@@ -13,6 +13,7 @@ test('AoE converts to the following evening in Beijing without using the machine
   assert.equal(formatDeadline(deadline, 'UTC'), '2026-09-26 11:59');
   assert.equal(formatDeadline(deadline, 'original'), '2026-09-25 23:59 AoE');
   assert.equal(formatDeadline('2026-03-05T23:00:00+01:00', 'Asia/Shanghai'), '2026-03-06 06:00');
+  assert.equal(formatDeadline('2026-01-22T22:00:00+00:00', 'Asia/Shanghai'), '2026-01-23 06:00');
 });
 
 test('current cycle keeps the open edition and switches to the next after the deadline', () => {
@@ -29,14 +30,18 @@ test('date-only deadlines do not invent a time and expired dates are classified 
   assert.equal(deadlineState({ paperDeadline: null }, now), 'pending');
 });
 
-test('11 followed series and 2 opt-in backups stay separate, with meaningful filtering', () => {
+test('12 followed series and 2 opt-in backups stay separate, with meaningful filtering', () => {
   const rows = getRows(data.conferences, defaults, now);
-  assert.equal(rows.length, 11);
+  assert.equal(rows.length, 12);
   assert.equal(rows[0].conference.series, 'ICLR');
   assert.equal(rows[1].conference.series, 'CVPR');
-  assert.equal(getRows(data.conferences, { ...defaults, backup: true }, now).length, 13);
+  assert.equal(getRows(data.conferences, { ...defaults, backup: true }, now).length, 14);
   assert.equal(getRows(data.conferences, { ...defaults, query: 'corl' }, now)[0].conference.series, 'CoRL');
   assert.equal(getRows(data.conferences, { ...defaults, category: 'RO' }, now).length, 4);
+  const graphics = getRows(data.conferences, { ...defaults, category: 'CG' }, now);
+  assert.equal(graphics.length, 1);
+  assert.equal(graphics[0].conference.series, 'SIGGRAPH');
+  assert.equal(graphics[0].status, 'pending');
   assert.equal(getRows(data.conferences, { ...defaults, status: 'open' }, now).length, 3);
 });
 
@@ -46,7 +51,7 @@ test('countdown never becomes negative after expiry', () => {
 });
 
 test('published data uses explicit offsets and preserves the 2026 CCF revision', () => {
-  assert.equal(new Set(data.conferences.map(item => item.series)).size, 13);
+  assert.equal(new Set(data.conferences.map(item => item.series)).size, 14);
   for (const conference of data.conferences) {
     assert.ok([null, 'A', 'B', 'C'].includes(conference.ccf));
     assert.ok(conference.cycleMonths.every(month => Number.isInteger(month) && month >= 1 && month <= 12));

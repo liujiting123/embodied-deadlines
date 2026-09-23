@@ -4,7 +4,7 @@
   "ccfPublishedAt": "2026-03-31",
   "ccfSource": "https://www.ccf.org.cn/ccf/contentcore/resource/download?ID=112CF3BF7E1140ACEB271ADAED12A67ADFABB8FF099E40C2759502A85C8A281F",
   "ccfAnnouncement": "https://www.ccf.org.cn/Academic_Evaluation/By_category/",
-  "ccfNote": "采用 2026 年正式第七版（4 月 9 日勘误版），人工智能会议表第 57–59 页。分领域 HTML 尚可能显示旧版。",
+  "ccfNote": "采用 2026 年正式第七版（4 月 9 日勘误版），人工智能会议表第 57–59 页；SIGGRAPH 位于图形学与多媒体 A 类会议第 47 页。分领域 HTML 尚可能显示旧版。",
   "conferences": [
     {
       "series": "CoRL",
@@ -427,6 +427,46 @@
         }
       ],
       "ccf": "B"
+    },
+    {
+      "series": "SIGGRAPH",
+      "name": "ACM SIGGRAPH Conference on Computer Graphics and Interactive Techniques",
+      "scope": "Technical Papers：往届涵盖机器人、仿真与视觉计算，设 Journal / Conference 双轨。",
+      "scopeSource": "https://s2026.siggraph.org/program/technical-papers/",
+      "category": "CG",
+      "priority": "core",
+      "cycleMonths": [
+        1
+      ],
+      "ccf": "A",
+      "editions": [
+        {
+          "year": 2026,
+          "website": "https://s2026.siggraph.org/program/technical-papers/",
+          "location": "Los Angeles, California, USA",
+          "conferenceStart": "2026-07-19",
+          "conferenceEnd": "2026-07-23",
+          "abstractDeadline": "2026-01-15T22:00:00+00:00",
+          "paperDeadline": "2026-01-22T22:00:00+00:00",
+          "sourceUrl": "https://s2026.siggraph.org/program/technical-papers/",
+          "verifiedAt": "2026-09-23",
+          "note": "全文与补充材料共用截止时间；次日仅可补传与已提交 MD5 匹配的文件。",
+          "sourceNote": "Technical Papers 官方时间均为 22:00 UTC/GMT：1 月 15 日注册表，1 月 22 日论文与补充材料或其 MD5，1 月 23 日补传及冲突填写。Journal / Conference 双轨共用评审与时间表。"
+        },
+        {
+          "year": 2027,
+          "website": "https://www.siggraph.org/siggraph-events/conferences/",
+          "location": "Anaheim, California, USA",
+          "conferenceStart": "2027-08-08",
+          "conferenceEnd": "2027-08-12",
+          "abstractDeadline": null,
+          "paperDeadline": null,
+          "sourceUrl": "https://www.siggraph.org/siggraph-events/conferences/",
+          "verifiedAt": "2026-09-23",
+          "note": "本届 Technical Papers 截稿日期尚未公布。",
+          "sourceNote": "ACM SIGGRAPH 官方会议目录已公布 2027 年 8 月 8–12 日在 Anaheim 举办；截至核对日未查到 2027 Technical Papers 正式截止。1 月仅为往届投稿节奏。"
+        }
+      ]
     },
     {
       "series": "AAAI",
