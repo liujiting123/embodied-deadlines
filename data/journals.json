@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-23",
+  "updatedAt": "2026-10-02",
   "ccfVersion": "CCF 推荐目录第七版（2026）",
   "ccfSource": "https://www.ccf.org.cn/ccf/contentcore/resource/download?ID=112CF3BF7E1140ACEB271ADAED12A67ADFABB8FF099E40C2759502A85C8A281F",
-  "ccfNote": "以正式第七版为准。TPAMI、IJCV、JMLR 见人工智能 A 类期刊表第 51 页；T-RO 以 TR / IEEE Transactions on Robotics 列于交叉、综合、新兴 B 类第 68 页。其他所列期刊未收录。",
+  "ccfNote": "以正式第七版为准。TVCG、TOG 见图形学与多媒体 A 类期刊表第 44 页；TPAMI、IJCV、JMLR 见人工智能 A 类期刊表第 51 页；T-RO 以 TR / IEEE Transactions on Robotics 列于交叉、综合、新兴 B 类第 68 页。其他所列期刊未收录。",
   "journals": [
     {
       "id": "tro",
@@ -99,6 +99,82 @@
         "https://www.nature.com/natmachintell/submission-guidelines"
       ],
       "verifiedAt": "2026-09-23"
+    },
+    {
+      "id": "tvcg",
+      "acronym": "TVCG",
+      "name": "IEEE Transactions on Visualization and Computer Graphics",
+      "categories": [
+        "CG"
+      ],
+      "ccf": "A",
+      "scope": "计算机图形学、可视化与 XR，涵盖动画仿真、交互、触觉和机器学习可视分析。",
+      "fit": "VR/AR 遥操作与示教、交互仿真、机器人策略的可视分析；核心贡献需落在图形、可视化或交互范围。",
+      "submissionMode": "滚动收稿 · 无统一 DDL",
+      "note": "常规论文按期刊作者指南提交；特刊和会议关联期刊轨道遵循各自的征稿通知。",
+      "conferenceTrack": {
+        "note": "VIS、IEEE VR、ISMAR 等会议设 TVCG 关联期刊轨道；获得期刊录用的论文发表于 TVCG，截稿时间与规则以对应年度 CFP 为准。",
+        "links": [
+          {
+            "label": "轨道格式说明",
+            "url": "https://tc.computer.org/vgtc/publications/journal/"
+          },
+          {
+            "label": "ISMAR 2026 征稿",
+            "url": "https://www.ieeeismar.net/2026/call-for-papers/"
+          }
+        ]
+      },
+      "example": {
+        "title": "Efficient Predictive VR Interaction for Fine Teleoperation Using Physics-Based Simulation and Automatic Planning",
+        "note": "TVCG，2026 年 Early Access；将物理仿真、自动规划与预测 VR 交互用于机器人精细遥操作，并通过用户实验评估。",
+        "url": "https://ieeexplore.ieee.org/abstract/document/11657799/"
+      },
+      "website": "https://www.computer.org/csdl/journal/tg",
+      "authorGuide": "https://www.computer.org/csdl/journal/tg/write-for-us/15094?title=Author%20Information&periodical=IEEE%20Transactions%20on%20Visualization%20and%20Computer%20Graphics",
+      "sources": [
+        "https://www.computer.org/digital-library/journals/tg/cfp-ieee-transactions-on-visualization-computer-graphics",
+        "https://tc.computer.org/vgtc/publications/journal/",
+        "https://www.ieeeismar.net/2026/call-for-papers/",
+        "https://ieeexplore.ieee.org/abstract/document/11657799/"
+      ],
+      "verifiedAt": "2026-10-02"
+    },
+    {
+      "id": "tog",
+      "acronym": "TOG",
+      "name": "ACM Transactions on Graphics",
+      "categories": [
+        "CG"
+      ],
+      "ccf": "A",
+      "scope": "计算机图形学与交互技术，关注经过充分验证、完整阐述的新方法。",
+      "fit": "物理动作控制、动作重定向、接触交互和仿真方法；贡献需推进图形或交互技术。",
+      "submissionMode": "滚动收稿 · 无统一 DDL",
+      "note": "常规期刊投稿与 SIGGRAPH Technical Papers 是不同入口，各自遵循对应作者指南。",
+      "conferenceTrack": {
+        "note": "SIGGRAPH Technical Papers 设 Journal / Conference 双轨；Journal 录用发表于 TOG，Conference 录用发表于会议论文集。会议 DDL 与常规期刊投稿分开规划。",
+        "links": [
+          {
+            "label": "SIGGRAPH 2026 双轨说明",
+            "url": "https://s2026.siggraph.org/program/technical-papers/"
+          }
+        ]
+      },
+      "example": {
+        "title": "DeepMimic（TOG / SIGGRAPH 2018）",
+        "note": "物理仿真中的强化学习与动作模仿，覆盖多种角色和技能。",
+        "url": "https://xbpeng.github.io/projects/DeepMimic/index.html"
+      },
+      "website": "https://dl.acm.org/journal/tog",
+      "authorGuide": "https://dl.acm.org/journal/tog/author-guidelines",
+      "sources": [
+        "https://dl.acm.org/journal/tog/author-guidelines",
+        "https://s2026.siggraph.org/program/technical-papers/",
+        "https://www.siggraph.org/inside-siggraph/publications/conference-papers-publications-proposal-for-siggraph-and-siggraph-asia-conferences/",
+        "https://xbpeng.github.io/projects/DeepMimic/index.html"
+      ],
+      "verifiedAt": "2026-10-02"
     },
     {
       "id": "tpami",

@@ -8,11 +8,13 @@
 
 SIGGRAPH 收录的是 Technical Papers 程序，可通过 `?sub=CG` 筛选。往届征稿范围包含机器人、仿真、动画与视觉计算；Journal / Conference 双轨共用投稿时间表。2027 年截止日期尚未核实，全年节奏中的 1 月来自 2026 年官方日期。
 
-“期刊投稿”栏目收录 T-RO、IJRR、RA-L、Science Robotics、Nature Machine Intelligence、TPAMI、IJCV、JMLR 和 TMLR，提供 CCF 分级、研究范围、常规投稿方式和作者指南链接。可按方向或名称筛选，常规滚动投稿不显示倒计时。[直接打开期刊栏目](https://liujiting123.github.io/embodied-deadlines/?tab=journals)。
+“期刊投稿”栏目收录 T-RO、IJRR、RA-L、Science Robotics、Nature Machine Intelligence、TVCG、TOG、TPAMI、IJCV、JMLR 和 TMLR，共 11 本，提供 CCF 分级、研究范围、常规投稿方式和作者指南链接。可按机器人、机器学习、视觉、图形与仿真方向筛选，也可搜索名称或贡献关键词。常规滚动投稿不显示倒计时。[直接打开期刊栏目](https://liujiting123.github.io/embodied-deadlines/?tab=journals)。
+
+TVCG、TOG 条目补充适合的具身交叉贡献、已发表论文案例与会议关联期刊轨道。TVCG 关注图形、可视化与 XR 交叉贡献；TOG 关注物理动作、仿真与交互技术。会议关联轨道按对应年度 CFP 的 DDL 投稿，与常规期刊入口分开规划；SIGGRAPH 的 Journal 录用发表于 TOG，Conference 录用发表于会议论文集。条目链接中的 2026 年征稿仅说明该年度规则，不代表下一届截止日期。
 
 ## 数据
 
-会议数据入口是 [`data/conferences.json`](data/conferences.json)，期刊资料入口是 [`data/journals.json`](data/journals.json)。当前核对至 **2026-09-23**，后续需人工更新；页面倒计时自动计算，不会自动抓取新的征稿通知。
+会议数据入口是 [`data/conferences.json`](data/conferences.json)，期刊资料入口是 [`data/journals.json`](data/journals.json)。会议日期核对至 **2026-09-23**；期刊资料最近更新于 **2026-10-02**，每本期刊的核对日期由 `verifiedAt` 记录并显示。后续需人工更新；页面倒计时自动计算，不会自动抓取新的征稿通知。
 
 - `editions[].year` 是会议年份，可能与投稿年份不同。
 - `paperDeadline` / `abstractDeadline` 必须使用包含明确 UTC 偏移的 ISO 8601 时间；未知填 `null`。
@@ -21,8 +23,9 @@ SIGGRAPH 收录的是 Technical Papers 程序，可通过 `?sub=CG` 筛选。往
 - `cycleMonths` 是往届全文截稿节奏，不是下一届确定日期。ICCV 和 ECCV 隔年举行。
 - 每个轮次保留 `sourceUrl`、`verifiedAt` 和来源说明 `sourceNote`。`note` 仅存需要在页面展示的简短信息。
 - 日期发生变动时，更新对应条目、`verifiedAt` 和顶层 `updatedAt`，再推送到 `main`。
+- 期刊可用 `fit` 说明具身贡献的适配边界，用 `conferenceTrack` 记录会议关联轨道的说明和官方链接，用 `example` 记录已发表论文案例；三者均为可选字段。事实来源保留在 `sources`。
 
-CCF 分级采用 **2026 年正式第七版（4 月 9 日勘误版）**，以[正式 PDF](https://www.ccf.org.cn/ccf/contentcore/resource/download?ID=112CF3BF7E1140ACEB271ADAED12A67ADFABB8FF099E40C2759502A85C8A281F)为准：人工智能会议见第 57–59 页，SIGGRAPH 见图形学与多媒体 A 类会议第 47 页，TPAMI / IJCV / JMLR 见第 51 页，T-RO 以 **TR — IEEE Transactions on Robotics** 列于第 68 页。[CCF 发布入口](https://www.ccf.org.cn/Academic_Evaluation/By_category/)。未收录用 `null` 表示，不等于 C 类。部分分领域 HTML 页面仍可能显示旧目录。
+CCF 分级采用 **2026 年正式第七版（4 月 9 日勘误版）**，以[正式 PDF](https://www.ccf.org.cn/ccf/contentcore/resource/download?ID=112CF3BF7E1140ACEB271ADAED12A67ADFABB8FF099E40C2759502A85C8A281F)为准：人工智能会议见第 57–59 页，TVCG / TOG 见图形学与多媒体 A 类期刊第 44 页，SIGGRAPH 见同领域 A 类会议第 47 页，TPAMI / IJCV / JMLR 见第 51 页，T-RO 以 **TR — IEEE Transactions on Robotics** 列于第 68 页。[CCF 发布入口](https://www.ccf.org.cn/Academic_Evaluation/By_category/)。未收录用 `null` 表示，不等于 C 类。部分分领域 HTML 页面仍可能显示旧目录。
 
 ## 运行与部署
 

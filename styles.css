@@ -27,10 +27,19 @@
 .journal-name{font-size:13px;color:var(--muted);line-height:1.55;margin:7px 0 8px}
 .journal-categories{font-size:13px;line-height:1.5}
 .journal-scope{font-size:15px;line-height:1.75;margin:14px 0 18px;flex:1}
+.journal-fit{background:#f0f4fc;border-radius:8px;padding:12px 14px;margin:0 0 18px}
+.journal-fit h3,.journal-detail h3{font-size:12px;font-weight:600;margin:0 0 6px;color:var(--muted)}
+.journal-fit h3{color:#41649f}
+.journal-fit p{font-size:14px;line-height:1.7;margin:0}
 .journal-submission{display:flex;align-items:baseline;gap:15px;flex-wrap:wrap;border-top:1px solid #edf0f6;padding-top:15px;font-size:14px}
 .journal-submission>span{color:var(--muted);font-size:13px}
 .journal-submission strong{font-weight:550;color:#336f61}
 .journal-note{font-size:13px;line-height:1.65;color:var(--muted);margin:8px 0 16px}
+.journal-detail{border-top:1px solid #edf0f6;padding-top:13px;margin:0 0 17px}
+.journal-detail p{font-size:13px;line-height:1.7;color:var(--muted);margin:0 0 5px;overflow-wrap:anywhere}
+.journal-detail a{color:var(--blue)}
+.journal-detail-links{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:13px;margin-top:8px}
 .journal-links{display:flex;gap:22px;flex-wrap:wrap;font-size:14px;color:var(--blue);margin-top:auto}
+.journal-verified{font-size:12px;color:var(--muted);margin:12px 0 0}
 @media(max-width:780px){.journal-intro{align-items:flex-start;flex-direction:column;gap:14px}.journal-intro h2{font-size:21px}.journal-toolbar{align-items:stretch;flex-direction:column;gap:10px}.journal-toolbar .search-field{flex:auto;border-left:0;border-top:1px solid var(--line);padding:9px 3px 0}.journal-grid{grid-template-columns:1fr}.journal-card{padding:22px}.publication-tabs{margin-bottom:22px}}
 @media(max-width:480px){.publication-tabs{gap:22px}.publication-tabs button{font-size:15px;padding-top:5px}.journal-card{padding:20px}.journal-card-top h2{font-size:21px}.journal-scope{font-size:15px}.journal-submission{gap:8px}.journal-intro p{font-size:14px}.journal-toolbar .category{font-size:13px}.rolling-label{font-size:13px}.journal-links{gap:15px;font-size:14px}}

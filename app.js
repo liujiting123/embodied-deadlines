@@ -138,7 +138,7 @@ function activateSection(section) {
   $('.skip-link').textContent = journals ? '跳至期刊列表' : '跳至会议列表';
   $('#data-link').href = `https://github.com/liujiting123/embodied-deadlines/blob/main/data/${journals ? 'journals' : 'conferences'}.json`;
   const activeData = journals ? journalData : data;
-  $('#verified-label').textContent = activeData ? `${journals ? '资料' : '日期'}核对 ${activeData.updatedAt}` : `正在载入${journals ? '期刊' : '会议'}数据`;
+  $('#verified-label').textContent = activeData ? `${journals ? '资料更新' : '日期核对'} ${activeData.updatedAt}` : `正在载入${journals ? '期刊' : '会议'}数据`;
   const url = new URL(location.href);
   if (journals) url.searchParams.set('tab', 'journals');
   else url.searchParams.delete('tab');
@@ -149,7 +149,7 @@ function renderJournals() {
   if (!journalData) return;
   const query = journalState.query.trim().toLowerCase();
   const journals = journalData.journals.filter(journal => journalState.category === 'all' || journal.categories.includes(journalState.category))
-    .filter(journal => `${journal.acronym} ${journal.name} ${journal.scope}`.toLowerCase().includes(query));
+    .filter(journal => `${journal.acronym} ${journal.name} ${journal.scope} ${journal.fit || ''} ${journal.example?.title || ''}`.toLowerCase().includes(query));
   $('#journal-count').textContent = `${journals.length} 本期刊 · 共关注 ${journalData.journals.length} 本`;
   $('#journal-results').innerHTML = journals.length ? journals.map(journal => {
     const grade = journal.ccf;
@@ -157,9 +157,13 @@ function renderJournals() {
       <div class="journal-card-top"><h2>${link(journal.website, escape(journal.acronym))}</h2>${link(journalData.ccfSource, `<span class="badge ccf-${grade ? grade.toLowerCase() : 'none'}" title="${escape(journalData.ccfVersion)}">${grade ? `CCF ${escape(grade)}` : 'CCF 未收录'}</span>`)}</div>
       <p class="journal-name">${escape(journal.name)}</p><div class="journal-categories">${journal.categories.map(category => `<span class="category-tag">${escape(categoryNames[category])}</span>`).join('<span class="meta-separator"> / </span>')}</div>
       <p class="journal-scope">${escape(journal.scope)}</p>
+      ${journal.fit ? `<div class="journal-fit"><h3>适合的具身贡献</h3><p>${escape(journal.fit)}</p></div>` : ''}
       <div class="journal-submission"><span>常规投稿</span><strong>${escape(journal.submissionMode)}</strong></div>
       <p class="journal-note">${escape(journal.note)}</p>
+      ${journal.conferenceTrack ? `<div class="journal-detail"><h3>会议关联期刊轨道</h3><p>${escape(journal.conferenceTrack.note)}</p><div class="journal-detail-links">${journal.conferenceTrack.links.map(item => link(item.url, `${escape(item.label)} ↗`)).join('')}</div></div>` : ''}
+      ${journal.example ? `<div class="journal-detail"><h3>相关论文案例</h3><p>${link(journal.example.url, escape(journal.example.title))}</p><p>${escape(journal.example.note)}</p></div>` : ''}
       <div class="journal-links">${link(journal.authorGuide, '投稿与作者指南 ↗')}${journal.presentationGuide ? link(journal.presentationGuide, '会议展示规则 ↗') : link(journal.website, '期刊官网 ↗')}</div>
+      <p class="journal-verified">资料核对 ${escape(journal.verifiedAt)}</p>
     </article>`;
   }).join('') : '<div class="empty"><strong>没有符合条件的期刊</strong>试试更换方向或关键词。<br><button id="reset-journals">重置筛选</button></div>';
   $('#reset-journals')?.addEventListener('click', () => {
@@ -167,7 +171,7 @@ function renderJournals() {
     syncJournalFilters(); renderJournals();
   });
   $('#journal-ccf-note').innerHTML = `分级依据${link(journalData.ccfSource, escape(journalData.ccfVersion))}；“未收录”不等于 C 类，也不代表学术质量评价。`;
-  if (state.section === 'journals') $('#verified-label').textContent = `资料核对 ${journalData.updatedAt}`;
+  if (state.section === 'journals') $('#verified-label').textContent = `资料更新 ${journalData.updatedAt}`;
 }
 
 function syncJournalFilters() {
